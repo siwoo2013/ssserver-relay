@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<div class="formbox"><h1>로그인</h1><form method="post"><label>아이디<input name="username" required></label><label>비밀번호<input type="password" name="password" required></label><button class="btn gold">로그인</button></form><p class="muted">계정이 없나요? <a href="{{url_for('register')}}">회원가입</a></p></div>{% endblock %}
