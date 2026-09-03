@@ -1,6 +1,0 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{% block title %}MINI GOLD{% endblock %}</title><link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"></head><body>
-<header><div class="wrap top"><a class="brand" href="{{ url_for('home') }}">MINI <b>GOLD</b></a><div>{% if current_user.is_authenticated %}<span>{{ current_user.name }}님</span> · <a href="{{url_for('logout')}}">로그아웃</a>{% else %}<a href="{{url_for('login')}}">로그인</a> · <a href="{{url_for('register')}}">회원가입</a>{% endif %}</div></div></header>
-<nav><div class="wrap nav"><a href="{{url_for('home')}}">홈</a><a href="{{url_for('company')}}">기업소개</a><a href="{{url_for('shop')}}">구매</a><a href="{{url_for('minigold') if current_user.is_authenticated else url_for('login')}}">미니골드</a><a href="{{url_for('promo')}}">홍보자료실</a><a href="{{url_for('support')}}">고객센터</a></div></nav>
-<main class="wrap">{% with messages=get_flashed_messages() %}{% if messages %}{% for m in messages %}<div class="flash">{{m}}</div>{% endfor %}{% endif %}{% endwith %}{% block content %}{% endblock %}</main>
-<footer><div class="wrap">MINI GOLD V1 DEMO · 초안 웹앱 · <a href="{{url_for('admin_login')}}">관리자</a></div></footer>
-</body></html>

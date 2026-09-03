@@ -1,1 +1,0 @@
-{% extends 'base.html' %}{% block content %}<div class="page-title"><h1>나의 주문</h1></div>{% for o in orders %}<div class="order card"><div><b>#{{o.id}} {{o.product.name}}</b><p>{{o.qty}}개 · {{'{:,}'.format(o.total)}}원</p></div><div><span class="badge">{{o.status}}</span><p>{{o.tracking or '송장번호 미등록'}}</p></div></div>{% else %}<p>주문내역이 없습니다.</p>{% endfor %}{% endblock %}
